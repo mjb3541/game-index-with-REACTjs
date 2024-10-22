@@ -95,7 +95,6 @@ function App() {
             <p className="game-name"><strong>{gameData.name}</strong></p>
           )}
 
-          {/* Wrap both the image, mask, and game info within the sticky-wrapper */}
           <div className="sticky-wrapper">
             {gameData.background_image && (
               <>
@@ -104,25 +103,21 @@ function App() {
                   alt="Game Image"
                   className="game-image"
                 />
-                {/* <div className="mask"></div> White box to hide text */}
               </>
             )}
 
             <div className="centered-game-data">
-
-
               <div className="rating">
                 {gameData.rating && (
                   <p><strong>Review Score: </strong>{gameData.rating} / {MAX_GAME_RATING} ({gameData.ratings_count}) <strong>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Metacritic Score: </strong>{gameData.metacritic}%</p>
                 )}
-
               </div>
 
               {gameData.genres.length > 0 && (
                 <div className="genres-container">
                   {gameData.genres.map((genre, index) => (
                     <div key={index} className="genre-ellipse">
-                      {genre.name} {/* Access the genre name */}
+                      {genre.name}
                     </div>
                   ))}
                 </div>
@@ -141,7 +136,6 @@ function App() {
           </div>
         </>
       )}
-
 
       {!loading && !gameData && <p>No game data available.</p>}
     </div>
